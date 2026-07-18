@@ -1,0 +1,21 @@
+[
+  {
+    "pose": { "timestamp": 0.0, "x": 0.0, "y": 0.0, "z": 2.0, "qx": 1.0, "qy": 0.0, "qz": 0.0, "qw": 0.0 },
+    "intrinsics": { "fx": 500.0, "fy": 500.0, "cx": 320.0, "cy": 240.0 },
+    "detections": [
+      { "label": "chair", "confidence": 0.5, "bbox_x": 0.5, "bbox_y": 0.5, "bbox_w": 0.0, "bbox_h": 0.0 }
+    ]
+  },
+  {
+    "pose": { "timestamp": 0.5, "x": 0.0, "y": 0.0, "z": 2.0, "qx": 1.0, "qy": 0.0, "qz": 0.0, "qw": 0.0 },
+    "intrinsics": { "fx": 500.0, "fy": 500.0, "cx": 320.0, "cy": 240.0 },
+    "detections": [
+      { "label": "chair", "confidence": 0.5, "bbox_x": 0.5, "bbox_y": 0.5, "bbox_w": 0.0, "bbox_h": 0.0 }
+    ]
+  },
+  {
+    "pose": { "timestamp": 5.0, "x": 0.0, "y": 0.0, "z": 2.0, "qx": 1.0, "qy": 0.0, "qz": 0.0, "qw": 0.0 },
+    "intrinsics": { "fx": 500.0, "fy": 500.0, "cx": 320.0, "cy": 240.0 },
+    "detections": []
+  }
+]

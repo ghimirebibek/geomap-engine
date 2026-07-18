@@ -3,24 +3,41 @@ use uuid::Uuid;
 use crate::projection::project_to_ground;
 use crate::proto::{Detection, Frame, MapObject, SceneMap};
 
-/// Detections farther than this from an existing object (in meters) are
-/// treated as a new object rather than a repeat observation of it.
-const ASSOCIATION_RADIUS_METERS: f32 = 0.5;
+/// Tunable thresholds for association and map maintenance. Defaults are
+/// reasonable v0.1 guesses, not tuned against real recorded data — expect
+/// to override them once fixtures from an actual dataset are available.
+#[derive(Debug, Clone, Copy)]
+pub struct EngineConfig {
+    /// Detections farther than this from an existing object (in meters)
+    /// are treated as a new object rather than a repeat observation of it.
+    pub association_radius_meters: f32,
+    /// An object not reinforced by a new observation within this many
+    /// seconds (frame-timestamp time, not wall-clock) is dropped. One
+    /// rule covers all of map maintenance: a one-off false detection
+    /// never gets reinforced and ages out; a genuinely stale object ages
+    /// out; an object that moved ages out at its old position while a
+    /// new one forms at the new position.
+    pub stale_timeout_seconds: f64,
+}
 
-/// An object not reinforced by a new observation within this many seconds
-/// (frame-timestamp time, not wall-clock) is dropped. One rule covers all
-/// of map maintenance: a one-off false detection never gets reinforced
-/// and ages out; a genuinely stale object ages out; an object that moved
-/// ages out at its old position while a new one forms at the new position.
-const STALE_TIMEOUT_SECONDS: f64 = 2.0;
+impl Default for EngineConfig {
+    fn default() -> Self {
+        Self { association_radius_meters: 0.5, stale_timeout_seconds: 2.0 }
+    }
+}
 
 pub struct Engine {
     scene_map: SceneMap,
+    config: EngineConfig,
 }
 
 impl Engine {
     pub fn new() -> Self {
-        Self { scene_map: SceneMap::default() }
+        Self::with_config(EngineConfig::default())
+    }
+
+    pub fn with_config(config: EngineConfig) -> Self {
+        Self { scene_map: SceneMap::default(), config }
     }
 
     pub fn ingest_frame(&mut self, frame: Frame) -> &SceneMap {
@@ -41,6 +58,7 @@ impl Engine {
     }
 
     fn associate_and_fuse(&mut self, detection: &Detection, x: f32, y: f32, timestamp: f64) {
+        let radius = self.config.association_radius_meters;
         let nearest = self
             .scene_map
             .objects
@@ -48,7 +66,7 @@ impl Engine {
             .filter(|obj| obj.label == detection.label)
             .filter_map(|obj| {
                 let dist = ((obj.x - x).powi(2) + (obj.y - y).powi(2)).sqrt();
-                (dist <= ASSOCIATION_RADIUS_METERS).then_some((dist, obj))
+                (dist <= radius).then_some((dist, obj))
             })
             .min_by(|a, b| a.0.total_cmp(&b.0))
             .map(|(_, obj)| obj);
@@ -60,9 +78,10 @@ impl Engine {
     }
 
     fn prune_stale(&mut self, now: f64) {
+        let stale_timeout = self.config.stale_timeout_seconds;
         self.scene_map
             .objects
-            .retain(|obj| now - obj.last_seen <= STALE_TIMEOUT_SECONDS);
+            .retain(|obj| now - obj.last_seen <= stale_timeout);
     }
 }
 

@@ -3,8 +3,10 @@ pub mod proto {
 }
 
 mod engine;
+mod fixture;
 mod geojson;
 mod projection;
 
-pub use engine::Engine;
+pub use engine::{Engine, EngineConfig};
+pub use fixture::{replay_fixture, FixtureError};
 pub use geojson::FeatureCollection;
