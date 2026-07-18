@@ -3,6 +3,8 @@ pub mod proto {
 }
 
 mod engine;
+mod geojson;
 mod projection;
 
 pub use engine::Engine;
+pub use geojson::FeatureCollection;
