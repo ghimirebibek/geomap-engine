@@ -3,7 +3,8 @@ use geomap_engine::{replay_fixture, EngineConfig};
 /// The floor-plane positions scripts/gen_tum_fixture.py placed the two
 /// synthetic objects at, for comparison against what the engine fuses
 /// them into after seeing them through 60 frames of real, noisy camera
-/// motion (see tests/fixtures/tum_freiburg1_xyz.json).
+/// motion plus +/-8px synthetic detector noise (see
+/// tests/fixtures/tum_freiburg1_xyz.json).
 const CHAIR_TRUE_POS: (f32, f32) = (-0.26525, 1.1161);
 const DOOR_TRUE_POS: (f32, f32) = (-1.26525, 1.1161);
 const POSITION_TOLERANCE_METERS: f32 = 0.05;
@@ -37,4 +38,23 @@ fn real_camera_trajectory_fuses_into_two_stable_objects() {
     // Repeated real observations should drive confidence up toward 1.
     assert!(chair.confidence > 0.99);
     assert!(door.confidence > 0.99);
+}
+
+/// EngineConfig::default()'s association radius was chosen to comfortably
+/// cover this fixture's detector-noise-induced jitter (see src/engine.rs).
+/// A radius far below that noise floor should fail to keep up: this
+/// pins down that the noise in the fixture is doing real work, not just
+/// passing regardless of the radius.
+#[test]
+fn too_tight_a_radius_fragments_under_realistic_detector_noise() {
+    let path = concat!(env!("CARGO_MANIFEST_DIR"), "/tests/fixtures/tum_freiburg1_xyz.json");
+    let config = EngineConfig { association_radius_meters: 0.02, ..EngineConfig::default() };
+    let snapshots = replay_fixture(path, config).unwrap();
+
+    let last = snapshots.last().unwrap();
+    assert!(
+        last.objects.len() > 2,
+        "expected a too-tight radius to fragment the two true objects into duplicates, got {}",
+        last.objects.len()
+    );
 }

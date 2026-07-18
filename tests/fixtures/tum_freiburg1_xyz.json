@@ -19,17 +19,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.6,
-        "bbox_x": 0.5206,
-        "bbox_y": 0.7461,
+        "confidence": 0.684,
+        "bbox_x": 0.5131,
+        "bbox_y": 0.7506,
         "bbox_w": 0.1454,
         "bbox_h": 0.1454
       },
       {
         "label": "door",
         "confidence": 0.691,
-        "bbox_x": 0.4965,
-        "bbox_y": 0.5247,
+        "bbox_x": 0.5045,
+        "bbox_y": 0.5279,
         "bbox_w": 0.1043,
         "bbox_h": 0.1043
       }
@@ -55,17 +55,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.664,
-        "bbox_x": 0.5739,
-        "bbox_y": 0.601,
+        "confidence": 0.699,
+        "bbox_x": 0.5621,
+        "bbox_y": 0.5856,
         "bbox_w": 0.1556,
         "bbox_h": 0.1556
       },
       {
         "label": "door",
         "confidence": 0.643,
-        "bbox_x": 0.5473,
-        "bbox_y": 0.3716,
+        "bbox_x": 0.54,
+        "bbox_y": 0.3863,
         "bbox_w": 0.1119,
         "bbox_h": 0.1119
       }
@@ -91,17 +91,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.699,
-        "bbox_x": 0.5984,
-        "bbox_y": 0.4176,
+        "confidence": 0.668,
+        "bbox_x": 0.5996,
+        "bbox_y": 0.417,
         "bbox_w": 0.1685,
         "bbox_h": 0.1685
       },
       {
         "label": "door",
         "confidence": 0.574,
-        "bbox_x": 0.5612,
-        "bbox_y": 0.174,
+        "bbox_x": 0.5494,
+        "bbox_y": 0.1669,
         "bbox_w": 0.1228,
         "bbox_h": 0.1228
       }
@@ -127,17 +127,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.686,
-        "bbox_x": 0.6395,
-        "bbox_y": 0.4054,
+        "confidence": 0.604,
+        "bbox_x": 0.6519,
+        "bbox_y": 0.421,
         "bbox_w": 0.1647,
         "bbox_h": 0.1647
       },
       {
         "label": "door",
         "confidence": 0.518,
-        "bbox_x": 0.6019,
-        "bbox_y": 0.1621,
+        "bbox_x": 0.6029,
+        "bbox_y": 0.1492,
         "bbox_w": 0.1213,
         "bbox_h": 0.1213
       }
@@ -163,17 +163,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.633,
-        "bbox_x": 0.6369,
-        "bbox_y": 0.4765,
+        "confidence": 0.539,
+        "bbox_x": 0.6423,
+        "bbox_y": 0.473,
         "bbox_w": 0.1476,
         "bbox_h": 0.1476
       },
       {
         "label": "door",
         "confidence": 0.5,
-        "bbox_x": 0.6044,
-        "bbox_y": 0.2493,
+        "bbox_x": 0.6168,
+        "bbox_y": 0.2597,
         "bbox_w": 0.1106,
         "bbox_h": 0.1106
       }
@@ -199,17 +199,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.565,
-        "bbox_x": 0.5589,
-        "bbox_y": 0.5641,
+        "confidence": 0.502,
+        "bbox_x": 0.5494,
+        "bbox_y": 0.5494,
         "bbox_w": 0.1372,
         "bbox_h": 0.1372
       },
       {
         "label": "door",
         "confidence": 0.529,
-        "bbox_x": 0.5287,
-        "bbox_y": 0.3504,
+        "bbox_x": 0.5343,
+        "bbox_y": 0.3607,
         "bbox_w": 0.103,
         "bbox_h": 0.103
       }
@@ -235,17 +235,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.513,
-        "bbox_x": 0.5021,
-        "bbox_y": 0.6333,
+        "confidence": 0.512,
+        "bbox_x": 0.4916,
+        "bbox_y": 0.6405,
         "bbox_w": 0.1334,
         "bbox_h": 0.1334
       },
       {
         "label": "door",
         "confidence": 0.592,
-        "bbox_x": 0.4686,
-        "bbox_y": 0.4255,
+        "bbox_x": 0.4593,
+        "bbox_y": 0.4124,
         "bbox_w": 0.0998,
         "bbox_h": 0.0998
       }
@@ -271,17 +271,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.502,
-        "bbox_x": 0.5482,
-        "bbox_y": 0.5632,
+        "confidence": 0.563,
+        "bbox_x": 0.5521,
+        "bbox_y": 0.5761,
         "bbox_w": 0.1401,
         "bbox_h": 0.1401
       },
       {
         "label": "door",
         "confidence": 0.658,
-        "bbox_x": 0.515,
-        "bbox_y": 0.3476,
+        "bbox_x": 0.5044,
+        "bbox_y": 0.3406,
         "bbox_w": 0.1046,
         "bbox_h": 0.1046
       }
@@ -307,17 +307,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.537,
-        "bbox_x": 0.5851,
-        "bbox_y": 0.4652,
+        "confidence": 0.631,
+        "bbox_x": 0.5977,
+        "bbox_y": 0.4547,
         "bbox_w": 0.1515,
         "bbox_h": 0.1515
       },
       {
         "label": "door",
         "confidence": 0.697,
-        "bbox_x": 0.5485,
-        "bbox_y": 0.2349,
+        "bbox_x": 0.5521,
+        "bbox_y": 0.2498,
         "bbox_w": 0.113,
         "bbox_h": 0.113
       }
@@ -343,17 +343,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.602,
-        "bbox_x": 0.606,
-        "bbox_y": 0.433,
+        "confidence": 0.685,
+        "bbox_x": 0.6089,
+        "bbox_y": 0.4228,
         "bbox_w": 0.1651,
         "bbox_h": 0.1651
       },
       {
         "label": "door",
         "confidence": 0.69,
-        "bbox_x": 0.5618,
-        "bbox_y": 0.1934,
+        "bbox_x": 0.5743,
+        "bbox_y": 0.1965,
         "bbox_w": 0.1206,
         "bbox_h": 0.1206
       }
@@ -379,17 +379,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.666,
-        "bbox_x": 0.6611,
-        "bbox_y": 0.4117,
+        "confidence": 0.699,
+        "bbox_x": 0.6501,
+        "bbox_y": 0.4248,
         "bbox_w": 0.1651,
         "bbox_h": 0.1651
       },
       {
         "label": "door",
         "confidence": 0.641,
-        "bbox_x": 0.6154,
-        "bbox_y": 0.1687,
+        "bbox_x": 0.6185,
+        "bbox_y": 0.1531,
         "bbox_w": 0.1214,
         "bbox_h": 0.1214
       }
@@ -415,17 +415,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.699,
-        "bbox_x": 0.6279,
-        "bbox_y": 0.5024,
+        "confidence": 0.666,
+        "bbox_x": 0.6191,
+        "bbox_y": 0.5092,
         "bbox_w": 0.1486,
         "bbox_h": 0.1486
       },
       {
         "label": "door",
         "confidence": 0.573,
-        "bbox_x": 0.598,
-        "bbox_y": 0.2704,
+        "bbox_x": 0.5871,
+        "bbox_y": 0.2713,
         "bbox_w": 0.1109,
         "bbox_h": 0.1109
       }
@@ -451,17 +451,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.685,
-        "bbox_x": 0.5534,
-        "bbox_y": 0.6267,
+        "confidence": 0.602,
+        "bbox_x": 0.5598,
+        "bbox_y": 0.6118,
         "bbox_w": 0.1381,
         "bbox_h": 0.1381
       },
       {
         "label": "door",
         "confidence": 0.517,
-        "bbox_x": 0.5236,
-        "bbox_y": 0.4095,
+        "bbox_x": 0.5147,
+        "bbox_y": 0.4249,
         "bbox_w": 0.1026,
         "bbox_h": 0.1026
       }
@@ -487,17 +487,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.632,
-        "bbox_x": 0.5082,
-        "bbox_y": 0.666,
+        "confidence": 0.537,
+        "bbox_x": 0.5203,
+        "bbox_y": 0.6631,
         "bbox_w": 0.1394,
         "bbox_h": 0.1394
       },
       {
         "label": "door",
         "confidence": 0.501,
-        "bbox_x": 0.4763,
-        "bbox_y": 0.4491,
+        "bbox_x": 0.4825,
+        "bbox_y": 0.4442,
         "bbox_w": 0.1027,
         "bbox_h": 0.1027
       }
@@ -523,17 +523,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.563,
-        "bbox_x": 0.6093,
-        "bbox_y": 0.4939,
+        "confidence": 0.502,
+        "bbox_x": 0.6095,
+        "bbox_y": 0.5095,
         "bbox_w": 0.1517,
         "bbox_h": 0.1517
       },
       {
         "label": "door",
         "confidence": 0.531,
-        "bbox_x": 0.5723,
-        "bbox_y": 0.2603,
+        "bbox_x": 0.5845,
+        "bbox_y": 0.2461,
         "bbox_w": 0.1127,
         "bbox_h": 0.1127
       }
@@ -560,16 +560,16 @@
       {
         "label": "chair",
         "confidence": 0.512,
-        "bbox_x": 0.5585,
-        "bbox_y": 0.4071,
+        "bbox_x": 0.5465,
+        "bbox_y": 0.406,
         "bbox_w": 0.1646,
         "bbox_h": 0.1646
       },
       {
         "label": "door",
         "confidence": 0.593,
-        "bbox_x": 0.5097,
-        "bbox_y": 0.1637,
+        "bbox_x": 0.5101,
+        "bbox_y": 0.1722,
         "bbox_w": 0.1216,
         "bbox_h": 0.1216
       }
@@ -595,17 +595,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.502,
-        "bbox_x": 0.5885,
-        "bbox_y": 0.3822,
+        "confidence": 0.564,
+        "bbox_x": 0.5819,
+        "bbox_y": 0.3669,
         "bbox_w": 0.1636,
         "bbox_h": 0.1636
       },
       {
         "label": "door",
         "confidence": 0.659,
-        "bbox_x": 0.5478,
-        "bbox_y": 0.1341,
+        "bbox_x": 0.5358,
+        "bbox_y": 0.1461,
         "bbox_w": 0.1219,
         "bbox_h": 0.1219
       }
@@ -631,17 +631,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.538,
-        "bbox_x": 0.6026,
-        "bbox_y": 0.4763,
+        "confidence": 0.633,
+        "bbox_x": 0.6111,
+        "bbox_y": 0.4813,
         "bbox_w": 0.1467,
         "bbox_h": 0.1467
       },
       {
         "label": "door",
         "confidence": 0.697,
-        "bbox_x": 0.5762,
-        "bbox_y": 0.2442,
+        "bbox_x": 0.5694,
+        "bbox_y": 0.2326,
         "bbox_w": 0.1106,
         "bbox_h": 0.1106
       }
@@ -667,17 +667,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.603,
-        "bbox_x": 0.5179,
-        "bbox_y": 0.5878,
+        "confidence": 0.686,
+        "bbox_x": 0.5291,
+        "bbox_y": 0.6019,
         "bbox_w": 0.1405,
         "bbox_h": 0.1405
       },
       {
         "label": "door",
         "confidence": 0.689,
-        "bbox_x": 0.4928,
-        "bbox_y": 0.3665,
+        "bbox_x": 0.5011,
+        "bbox_y": 0.3575,
         "bbox_w": 0.1047,
         "bbox_h": 0.1047
       }
@@ -703,17 +703,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.667,
-        "bbox_x": 0.4339,
-        "bbox_y": 0.5908,
+        "confidence": 0.699,
+        "bbox_x": 0.4314,
+        "bbox_y": 0.5821,
         "bbox_w": 0.1427,
         "bbox_h": 0.1427
       },
       {
         "label": "door",
         "confidence": 0.64,
-        "bbox_x": 0.4141,
-        "bbox_y": 0.3682,
+        "bbox_x": 0.4253,
+        "bbox_y": 0.3821,
         "bbox_w": 0.1061,
         "bbox_h": 0.1061
       }
@@ -739,17 +739,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.699,
-        "bbox_x": 0.3287,
-        "bbox_y": 0.5305,
+        "confidence": 0.665,
+        "bbox_x": 0.3162,
+        "bbox_y": 0.5187,
         "bbox_w": 0.1461,
         "bbox_h": 0.1461
       },
       {
         "label": "door",
         "confidence": 0.571,
-        "bbox_x": 0.3115,
-        "bbox_y": 0.3062,
+        "bbox_x": 0.3092,
+        "bbox_y": 0.3115,
         "bbox_w": 0.1096,
         "bbox_h": 0.1096
       }
@@ -775,17 +775,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.685,
-        "bbox_x": 0.39,
-        "bbox_y": 0.4988,
+        "confidence": 0.601,
+        "bbox_x": 0.3858,
+        "bbox_y": 0.5106,
         "bbox_w": 0.1436,
         "bbox_h": 0.1436
       },
       {
         "label": "door",
         "confidence": 0.516,
-        "bbox_x": 0.3616,
-        "bbox_y": 0.2798,
+        "bbox_x": 0.3491,
+        "bbox_y": 0.2645,
         "bbox_w": 0.1085,
         "bbox_h": 0.1085
       }
@@ -811,17 +811,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.63,
-        "bbox_x": 0.5461,
-        "bbox_y": 0.457,
+        "confidence": 0.536,
+        "bbox_x": 0.5564,
+        "bbox_y": 0.4657,
         "bbox_w": 0.1425,
         "bbox_h": 0.1425
       },
       {
         "label": "door",
         "confidence": 0.501,
-        "bbox_x": 0.5083,
-        "bbox_y": 0.2382,
+        "bbox_x": 0.5039,
+        "bbox_y": 0.2368,
         "bbox_w": 0.1081,
         "bbox_h": 0.1081
       }
@@ -847,17 +847,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.562,
-        "bbox_x": 0.6774,
-        "bbox_y": 0.4104,
+        "confidence": 0.502,
+        "bbox_x": 0.687,
+        "bbox_y": 0.3964,
         "bbox_w": 0.1471,
         "bbox_h": 0.1471
       },
       {
         "label": "door",
         "confidence": 0.532,
-        "bbox_x": 0.6411,
-        "bbox_y": 0.177,
+        "bbox_x": 0.6512,
+        "bbox_y": 0.1927,
         "bbox_w": 0.1123,
         "bbox_h": 0.1123
       }
@@ -883,17 +883,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.511,
-        "bbox_x": 0.8459,
-        "bbox_y": 0.4205,
+        "confidence": 0.513,
+        "bbox_x": 0.8408,
+        "bbox_y": 0.4153,
         "bbox_w": 0.1559,
         "bbox_h": 0.1559
       },
       {
         "label": "door",
         "confidence": 0.595,
-        "bbox_x": 0.8117,
-        "bbox_y": 0.1683,
+        "bbox_x": 0.8215,
+        "bbox_y": 0.1657,
         "bbox_w": 0.1185,
         "bbox_h": 0.1185
       }
@@ -919,17 +919,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.502,
-        "bbox_x": 0.7647,
-        "bbox_y": 0.413,
+        "confidence": 0.566,
+        "bbox_x": 0.7523,
+        "bbox_y": 0.4284,
         "bbox_w": 0.1516,
         "bbox_h": 0.1516
       },
       {
         "label": "door",
         "confidence": 0.661,
-        "bbox_x": 0.7342,
-        "bbox_y": 0.1698,
+        "bbox_x": 0.7292,
+        "bbox_y": 0.1548,
         "bbox_w": 0.1155,
         "bbox_h": 0.1155
       }
@@ -955,17 +955,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.54,
-        "bbox_x": 0.5758,
-        "bbox_y": 0.442,
+        "confidence": 0.634,
+        "bbox_x": 0.5743,
+        "bbox_y": 0.4432,
         "bbox_w": 0.1453,
         "bbox_h": 0.1453
       },
       {
         "label": "door",
         "confidence": 0.698,
-        "bbox_x": 0.5458,
-        "bbox_y": 0.2157,
+        "bbox_x": 0.5334,
+        "bbox_y": 0.2221,
         "bbox_w": 0.1102,
         "bbox_h": 0.1102
       }
@@ -991,17 +991,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.605,
-        "bbox_x": 0.3406,
-        "bbox_y": 0.4984,
+        "confidence": 0.687,
+        "bbox_x": 0.3523,
+        "bbox_y": 0.4828,
         "bbox_w": 0.146,
         "bbox_h": 0.146
       },
       {
         "label": "door",
         "confidence": 0.689,
-        "bbox_x": 0.3292,
-        "bbox_y": 0.2718,
+        "bbox_x": 0.3274,
+        "bbox_y": 0.2851,
         "bbox_w": 0.1101,
         "bbox_h": 0.1101
       }
@@ -1027,17 +1027,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.668,
-        "bbox_x": 0.2906,
-        "bbox_y": 0.5256,
+        "confidence": 0.698,
+        "bbox_x": 0.2983,
+        "bbox_y": 0.5284,
         "bbox_w": 0.1479,
         "bbox_h": 0.1479
       },
       {
         "label": "door",
         "confidence": 0.638,
-        "bbox_x": 0.268,
-        "bbox_y": 0.3017,
+        "bbox_x": 0.2795,
+        "bbox_y": 0.2918,
         "bbox_w": 0.111,
         "bbox_h": 0.111
       }
@@ -1063,17 +1063,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.699,
-        "bbox_x": 0.4231,
-        "bbox_y": 0.475,
+        "confidence": 0.664,
+        "bbox_x": 0.4157,
+        "bbox_y": 0.4899,
         "bbox_w": 0.1445,
         "bbox_h": 0.1445
       },
       {
         "label": "door",
         "confidence": 0.57,
-        "bbox_x": 0.393,
-        "bbox_y": 0.2546,
+        "bbox_x": 0.4009,
+        "bbox_y": 0.2438,
         "bbox_w": 0.1093,
         "bbox_h": 0.1093
       }
@@ -1099,17 +1099,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.684,
-        "bbox_x": 0.5917,
-        "bbox_y": 0.4692,
+        "confidence": 0.599,
+        "bbox_x": 0.58,
+        "bbox_y": 0.4625,
         "bbox_w": 0.1453,
         "bbox_h": 0.1453
       },
       {
         "label": "door",
         "confidence": 0.515,
-        "bbox_x": 0.5578,
-        "bbox_y": 0.2419,
+        "bbox_x": 0.5505,
+        "bbox_y": 0.2546,
         "bbox_w": 0.1097,
         "bbox_h": 0.1097
       }
@@ -1135,17 +1135,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.629,
-        "bbox_x": 0.6931,
-        "bbox_y": 0.5551,
+        "confidence": 0.535,
+        "bbox_x": 0.6943,
+        "bbox_y": 0.5419,
         "bbox_w": 0.1489,
         "bbox_h": 0.1489
       },
       {
         "label": "door",
         "confidence": 0.501,
-        "bbox_x": 0.6548,
-        "bbox_y": 0.3203,
+        "bbox_x": 0.643,
+        "bbox_y": 0.3278,
         "bbox_w": 0.1102,
         "bbox_h": 0.1102
       }
@@ -1171,17 +1171,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.56,
-        "bbox_x": 0.8426,
-        "bbox_y": 0.5492,
+        "confidence": 0.501,
+        "bbox_x": 0.855,
+        "bbox_y": 0.5593,
         "bbox_w": 0.1577,
         "bbox_h": 0.1577
       },
       {
         "label": "door",
         "confidence": 0.533,
-        "bbox_x": 0.795,
-        "bbox_y": 0.2974,
+        "bbox_x": 0.796,
+        "bbox_y": 0.2828,
         "bbox_w": 0.1161,
         "bbox_h": 0.1161
       }
@@ -1207,17 +1207,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.51,
-        "bbox_x": 0.745,
-        "bbox_y": 0.4975,
+        "confidence": 0.514,
+        "bbox_x": 0.7504,
+        "bbox_y": 0.5081,
         "bbox_w": 0.1541,
         "bbox_h": 0.1541
       },
       {
         "label": "door",
         "confidence": 0.597,
-        "bbox_x": 0.7098,
-        "bbox_y": 0.2541,
+        "bbox_x": 0.7221,
+        "bbox_y": 0.2504,
         "bbox_w": 0.1147,
         "bbox_h": 0.1147
       }
@@ -1243,17 +1243,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.503,
-        "bbox_x": 0.5594,
-        "bbox_y": 0.4252,
+        "confidence": 0.567,
+        "bbox_x": 0.55,
+        "bbox_y": 0.4125,
         "bbox_w": 0.1499,
         "bbox_h": 0.1499
       },
       {
         "label": "door",
         "confidence": 0.662,
-        "bbox_x": 0.5143,
-        "bbox_y": 0.1992,
+        "bbox_x": 0.52,
+        "bbox_y": 0.2147,
         "bbox_w": 0.1129,
         "bbox_h": 0.1129
       }
@@ -1279,17 +1279,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.541,
-        "bbox_x": 0.3043,
-        "bbox_y": 0.3766,
+        "confidence": 0.636,
+        "bbox_x": 0.2939,
+        "bbox_y": 0.3693,
         "bbox_w": 0.1526,
         "bbox_h": 0.1526
       },
       {
         "label": "door",
         "confidence": 0.698,
-        "bbox_x": 0.245,
-        "bbox_y": 0.1491,
+        "bbox_x": 0.2357,
+        "bbox_y": 0.1488,
         "bbox_w": 0.1179,
         "bbox_h": 0.1179
       }
@@ -1315,17 +1315,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.607,
-        "bbox_x": 0.3503,
-        "bbox_y": 0.3823,
+        "confidence": 0.688,
+        "bbox_x": 0.3542,
+        "bbox_y": 0.397,
         "bbox_w": 0.1497,
         "bbox_h": 0.1497
       },
       {
         "label": "door",
         "confidence": 0.688,
-        "bbox_x": 0.3039,
-        "bbox_y": 0.1538,
+        "bbox_x": 0.2933,
+        "bbox_y": 0.1383,
         "bbox_w": 0.1154,
         "bbox_h": 0.1154
       }
@@ -1351,17 +1351,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.669,
-        "bbox_x": 0.6309,
-        "bbox_y": 0.3606,
+        "confidence": 0.698,
+        "bbox_x": 0.6434,
+        "bbox_y": 0.3641,
         "bbox_w": 0.1514,
         "bbox_h": 0.1514
       },
       {
         "label": "door",
         "confidence": 0.637,
-        "bbox_x": 0.6017,
-        "bbox_y": 0.1244,
+        "bbox_x": 0.6053,
+        "bbox_y": 0.1286,
         "bbox_w": 0.1156,
         "bbox_h": 0.1156
       }
@@ -1387,17 +1387,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.699,
-        "bbox_x": 0.6669,
-        "bbox_y": 0.4202,
+        "confidence": 0.662,
+        "bbox_x": 0.6697,
+        "bbox_y": 0.4047,
         "bbox_w": 0.1533,
         "bbox_h": 0.1533
       },
       {
         "label": "door",
         "confidence": 0.568,
-        "bbox_x": 0.6316,
-        "bbox_y": 0.1754,
+        "bbox_x": 0.6441,
+        "bbox_y": 0.1898,
         "bbox_w": 0.116,
         "bbox_h": 0.116
       }
@@ -1423,17 +1423,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.683,
-        "bbox_x": 0.6313,
-        "bbox_y": 0.515,
+        "confidence": 0.597,
+        "bbox_x": 0.6203,
+        "bbox_y": 0.5155,
         "bbox_w": 0.1551,
         "bbox_h": 0.1551
       },
       {
         "label": "door",
         "confidence": 0.514,
-        "bbox_x": 0.5957,
-        "bbox_y": 0.2507,
+        "bbox_x": 0.5987,
+        "bbox_y": 0.2427,
         "bbox_w": 0.1164,
         "bbox_h": 0.1164
       }
@@ -1459,17 +1459,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.627,
-        "bbox_x": 0.6316,
-        "bbox_y": 0.5373,
+        "confidence": 0.534,
+        "bbox_x": 0.6229,
+        "bbox_y": 0.5528,
         "bbox_w": 0.1564,
         "bbox_h": 0.1564
       },
       {
         "label": "door",
         "confidence": 0.501,
-        "bbox_x": 0.5983,
-        "bbox_y": 0.2726,
+        "bbox_x": 0.5874,
+        "bbox_y": 0.2603,
         "bbox_w": 0.1165,
         "bbox_h": 0.1165
       }
@@ -1495,17 +1495,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.559,
-        "bbox_x": 0.656,
-        "bbox_y": 0.4631,
+        "confidence": 0.501,
+        "bbox_x": 0.6623,
+        "bbox_y": 0.4586,
         "bbox_w": 0.152,
         "bbox_h": 0.152
       },
       {
         "label": "door",
         "confidence": 0.534,
-        "bbox_x": 0.6267,
-        "bbox_y": 0.2244,
+        "bbox_x": 0.6178,
+        "bbox_y": 0.2356,
         "bbox_w": 0.1139,
         "bbox_h": 0.1139
       }
@@ -1531,17 +1531,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.51,
-        "bbox_x": 0.6377,
-        "bbox_y": 0.3344,
+        "confidence": 0.515,
+        "bbox_x": 0.6498,
+        "bbox_y": 0.3201,
         "bbox_w": 0.1491,
         "bbox_h": 0.1491
       },
       {
         "label": "door",
         "confidence": 0.598,
-        "bbox_x": 0.6025,
-        "bbox_y": 0.1165,
+        "bbox_x": 0.6086,
+        "bbox_y": 0.1259,
         "bbox_w": 0.1134,
         "bbox_h": 0.1134
       }
@@ -1567,17 +1567,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.503,
-        "bbox_x": 0.6213,
-        "bbox_y": 0.2827,
+        "confidence": 0.569,
+        "bbox_x": 0.6215,
+        "bbox_y": 0.2908,
         "bbox_w": 0.1483,
         "bbox_h": 0.1483
       },
       {
         "label": "door",
         "confidence": 0.663,
-        "bbox_x": 0.5804,
-        "bbox_y": 0.0718,
+        "bbox_x": 0.5926,
+        "bbox_y": 0.0582,
         "bbox_w": 0.1135,
         "bbox_h": 0.1135
       }
@@ -1603,17 +1603,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.542,
-        "bbox_x": 0.6642,
-        "bbox_y": 0.4412,
+        "confidence": 0.637,
+        "bbox_x": 0.6521,
+        "bbox_y": 0.4534,
         "bbox_w": 0.1528,
         "bbox_h": 0.1528
       },
       {
         "label": "door",
         "confidence": 0.698,
-        "bbox_x": 0.6178,
-        "bbox_y": 0.2176,
+        "bbox_x": 0.6181,
+        "bbox_y": 0.2117,
         "bbox_w": 0.1135,
         "bbox_h": 0.1135
       }
@@ -1639,17 +1639,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.608,
-        "bbox_x": 0.6716,
-        "bbox_y": 0.5539,
+        "confidence": 0.688,
+        "bbox_x": 0.665,
+        "bbox_y": 0.5426,
         "bbox_w": 0.1562,
         "bbox_h": 0.1562
       },
       {
         "label": "door",
         "confidence": 0.687,
-        "bbox_x": 0.6291,
-        "bbox_y": 0.3073,
+        "bbox_x": 0.6171,
+        "bbox_y": 0.3224,
         "bbox_w": 0.1144,
         "bbox_h": 0.1144
       }
@@ -1675,17 +1675,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.671,
-        "bbox_x": 0.6495,
-        "bbox_y": 0.6258,
+        "confidence": 0.698,
+        "bbox_x": 0.6581,
+        "bbox_y": 0.6165,
         "bbox_w": 0.1579,
         "bbox_h": 0.1579
       },
       {
         "label": "door",
         "confidence": 0.635,
-        "bbox_x": 0.6052,
-        "bbox_y": 0.3593,
+        "bbox_x": 0.5984,
+        "bbox_y": 0.3614,
         "bbox_w": 0.1152,
         "bbox_h": 0.1152
       }
@@ -1711,17 +1711,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.7,
-        "bbox_x": 0.6443,
-        "bbox_y": 0.5836,
+        "confidence": 0.661,
+        "bbox_x": 0.6555,
+        "bbox_y": 0.5973,
         "bbox_w": 0.1563,
         "bbox_h": 0.1563
       },
       {
         "label": "door",
         "confidence": 0.566,
-        "bbox_x": 0.6102,
-        "bbox_y": 0.3247,
+        "bbox_x": 0.6186,
+        "bbox_y": 0.3091,
         "bbox_w": 0.1149,
         "bbox_h": 0.1149
       }
@@ -1747,17 +1747,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.682,
-        "bbox_x": 0.7016,
-        "bbox_y": 0.4503,
+        "confidence": 0.596,
+        "bbox_x": 0.699,
+        "bbox_y": 0.4561,
         "bbox_w": 0.1538,
         "bbox_h": 0.1538
       },
       {
         "label": "door",
         "confidence": 0.514,
-        "bbox_x": 0.6701,
-        "bbox_y": 0.213,
+        "bbox_x": 0.6814,
+        "bbox_y": 0.2149,
         "bbox_w": 0.115,
         "bbox_h": 0.115
       }
@@ -1783,17 +1783,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.625,
-        "bbox_x": 0.6555,
-        "bbox_y": 0.2944,
+        "confidence": 0.532,
+        "bbox_x": 0.643,
+        "bbox_y": 0.2792,
         "bbox_w": 0.1507,
         "bbox_h": 0.1507
       },
       {
         "label": "door",
         "confidence": 0.501,
-        "bbox_x": 0.6203,
-        "bbox_y": 0.0726,
+        "bbox_x": 0.6179,
+        "bbox_y": 0.0878,
         "bbox_w": 0.1154,
         "bbox_h": 0.1154
       }
@@ -1819,9 +1819,9 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.557,
-        "bbox_x": 0.5908,
-        "bbox_y": 0.1407,
+        "confidence": 0.501,
+        "bbox_x": 0.5866,
+        "bbox_y": 0.1389,
         "bbox_w": 0.1515,
         "bbox_h": 0.1515
       }
@@ -1847,17 +1847,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.509,
-        "bbox_x": 0.6372,
-        "bbox_y": 0.2427,
+        "confidence": 0.516,
+        "bbox_x": 0.6475,
+        "bbox_y": 0.2583,
         "bbox_w": 0.1516,
         "bbox_h": 0.1516
       },
       {
         "label": "door",
         "confidence": 0.6,
-        "bbox_x": 0.593,
-        "bbox_y": 0.0281,
+        "bbox_x": 0.5887,
+        "bbox_y": 0.0144,
         "bbox_w": 0.1163,
         "bbox_h": 0.1163
       }
@@ -1883,17 +1883,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.504,
-        "bbox_x": 0.6844,
-        "bbox_y": 0.4607,
+        "confidence": 0.571,
+        "bbox_x": 0.694,
+        "bbox_y": 0.4586,
         "bbox_w": 0.1541,
         "bbox_h": 0.1541
       },
       {
         "label": "door",
         "confidence": 0.664,
-        "bbox_x": 0.6458,
-        "bbox_y": 0.2304,
+        "bbox_x": 0.656,
+        "bbox_y": 0.2398,
         "bbox_w": 0.1142,
         "bbox_h": 0.1142
       }
@@ -1919,17 +1919,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.544,
-        "bbox_x": 0.6863,
-        "bbox_y": 0.5654,
+        "confidence": 0.639,
+        "bbox_x": 0.6811,
+        "bbox_y": 0.5503,
         "bbox_w": 0.1592,
         "bbox_h": 0.1592
       },
       {
         "label": "door",
         "confidence": 0.699,
-        "bbox_x": 0.6444,
-        "bbox_y": 0.309,
+        "bbox_x": 0.6542,
+        "bbox_y": 0.3202,
         "bbox_w": 0.1163,
         "bbox_h": 0.1163
       }
@@ -1955,17 +1955,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.61,
-        "bbox_x": 0.6493,
-        "bbox_y": 0.6171,
+        "confidence": 0.689,
+        "bbox_x": 0.6369,
+        "bbox_y": 0.6232,
         "bbox_w": 0.1585,
         "bbox_h": 0.1585
       },
       {
         "label": "door",
         "confidence": 0.686,
-        "bbox_x": 0.6117,
-        "bbox_y": 0.3554,
+        "bbox_x": 0.6068,
+        "bbox_y": 0.3431,
         "bbox_w": 0.1153,
         "bbox_h": 0.1153
       }
@@ -1991,17 +1991,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.672,
-        "bbox_x": 0.6803,
-        "bbox_y": 0.4503,
+        "confidence": 0.697,
+        "bbox_x": 0.6788,
+        "bbox_y": 0.4638,
         "bbox_w": 0.1563,
         "bbox_h": 0.1563
       },
       {
         "label": "door",
         "confidence": 0.633,
-        "bbox_x": 0.6431,
-        "bbox_y": 0.2108,
+        "bbox_x": 0.6307,
+        "bbox_y": 0.2027,
         "bbox_w": 0.1162,
         "bbox_h": 0.1162
       }
@@ -2027,17 +2027,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.7,
-        "bbox_x": 0.6403,
-        "bbox_y": 0.2776,
+        "confidence": 0.66,
+        "bbox_x": 0.6519,
+        "bbox_y": 0.268,
         "bbox_w": 0.1536,
         "bbox_h": 0.1536
       },
       {
         "label": "door",
         "confidence": 0.565,
-        "bbox_x": 0.5993,
-        "bbox_y": 0.0526,
+        "bbox_x": 0.5976,
+        "bbox_y": 0.067,
         "bbox_w": 0.1174,
         "bbox_h": 0.1174
       }
@@ -2063,17 +2063,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.681,
-        "bbox_x": 0.6414,
-        "bbox_y": 0.2919,
+        "confidence": 0.594,
+        "bbox_x": 0.6491,
+        "bbox_y": 0.2808,
         "bbox_w": 0.153,
         "bbox_h": 0.153
       },
       {
         "label": "door",
         "confidence": 0.513,
-        "bbox_x": 0.5989,
-        "bbox_y": 0.0707,
+        "bbox_x": 0.6105,
+        "bbox_y": 0.0751,
         "bbox_w": 0.1165,
         "bbox_h": 0.1165
       }
@@ -2099,17 +2099,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.624,
-        "bbox_x": 0.6635,
-        "bbox_y": 0.3173,
+        "confidence": 0.531,
+        "bbox_x": 0.656,
+        "bbox_y": 0.3297,
         "bbox_w": 0.1549,
         "bbox_h": 0.1549
       },
       {
         "label": "door",
         "confidence": 0.502,
-        "bbox_x": 0.6211,
-        "bbox_y": 0.0918,
+        "bbox_x": 0.629,
+        "bbox_y": 0.0763,
         "bbox_w": 0.1172,
         "bbox_h": 0.1172
       }
@@ -2135,17 +2135,17 @@
     "detections": [
       {
         "label": "chair",
-        "confidence": 0.556,
-        "bbox_x": 0.671,
-        "bbox_y": 0.318,
+        "confidence": 0.501,
+        "bbox_x": 0.6593,
+        "bbox_y": 0.3259,
         "bbox_w": 0.1562,
         "bbox_h": 0.1562
       },
       {
         "label": "door",
         "confidence": 0.537,
-        "bbox_x": 0.627,
-        "bbox_y": 0.0897,
+        "bbox_x": 0.6197,
+        "bbox_y": 0.0893,
         "bbox_w": 0.1181,
         "bbox_h": 0.1181
       }

@@ -3,13 +3,26 @@ use uuid::Uuid;
 use crate::projection::project_to_ground;
 use crate::proto::{Detection, Frame, MapObject, SceneMap};
 
-/// Tunable thresholds for association and map maintenance. Defaults are
-/// reasonable v0.1 guesses, not tuned against real recorded data — expect
-/// to override them once fixtures from an actual dataset are available.
+/// Tunable thresholds for association and map maintenance.
 #[derive(Debug, Clone, Copy)]
 pub struct EngineConfig {
     /// Detections farther than this from an existing object (in meters)
     /// are treated as a new object rather than a repeat observation of it.
+    ///
+    /// 0.3m comes from the ground-plane projection's noise sensitivity: for
+    /// this v0.1 monocular ground-plane method, a fixed pixel error in the
+    /// detector's bbox translates to a ground-position error that grows
+    /// sharply with distance/viewing angle (near-grazing rays amplify small
+    /// pixel noise into large position swings). At the indoor near-to-medium
+    /// range this v0.1 engine targets (up to ~4m), +/-8-10px of detector
+    /// localization error — representative of a moderate real-time
+    /// detector — stays under ~0.26m of ground jitter, so 0.3m has margin
+    /// without being so loose that distinct nearby objects merge. Beyond
+    /// ~5-8m or at shallow viewing angles this margin erodes fast; that's
+    /// an inherent limitation of ground-plane-only projection, not
+    /// something this constant can fix. Validated against real camera
+    /// motion with synthetic +/-8px detector noise in
+    /// tests/replay_tum_fixture.rs / tests/fixtures/tum_freiburg1_xyz.json.
     pub association_radius_meters: f32,
     /// An object not reinforced by a new observation within this many
     /// seconds (frame-timestamp time, not wall-clock) is dropped. One
@@ -17,12 +30,19 @@ pub struct EngineConfig {
     /// never gets reinforced and ages out; a genuinely stale object ages
     /// out; an object that moved ages out at its old position while a
     /// new one forms at the new position.
+    ///
+    /// 2.0s is a reasoned assumption, not a measured one: object detection
+    /// is usually the expensive stage of a mobile perception pipeline and
+    /// commonly throttled well below camera framerate, so assume ~5Hz
+    /// detections and tolerate ~10 consecutive misses (occlusion, motion
+    /// blur) before treating an object as gone. There's no real detector
+    /// dropout data behind this yet — revisit once a live frontend exists.
     pub stale_timeout_seconds: f64,
 }
 
 impl Default for EngineConfig {
     fn default() -> Self {
-        Self { association_radius_meters: 0.5, stale_timeout_seconds: 2.0 }
+        Self { association_radius_meters: 0.3, stale_timeout_seconds: 2.0 }
     }
 }
 

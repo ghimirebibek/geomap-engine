@@ -9,8 +9,12 @@ TUM RGB-D is a SLAM benchmark and has no object-detection ground truth, so
 the detections in the output are synthetic: this script places a couple of
 fixed points on the assumed floor plane (z=0) and forward-projects them
 into each real camera pose to compute a plausible bbox, keeping only the
-frames where the point actually falls in view. Confidence gets a small
-deterministic jitter so it isn't perfectly uniform across observations.
+frames where the point actually falls in view. Confidence and the
+projected pixel both get small deterministic jitter (sine-based, not a
+stray RNG dependency) so this isn't a noiseless round-trip of the same
+pinhole model: the +/-8px jitter approximates a moderate real-time object
+detector's localization error, giving EngineConfig's default association
+radius (see src/engine.rs) something realistic to be tested against.
 
 Regenerate with:
     curl -o groundtruth.txt \\
@@ -114,6 +118,17 @@ if door_pos:
 else:
     print("no second object found >=1m from the first", file=sys.stderr)
 
+# Approximate localization error (pixels) for a moderate real-time object
+# detector; see the docstring above and src/engine.rs's EngineConfig for
+# how this feeds into choosing the association radius.
+DETECTOR_NOISE_PX = 8.0
+
+def label_seed(label):
+    # A stable, non-randomized substitute for Python's hash(), which is
+    # salted per-process and would make "deterministic" jitter not actually
+    # reproducible across runs.
+    return sum(ord(c) for c in label)
+
 def make_detection(label, px, py, depth, base_confidence, jitter):
     obj_width_m = 0.4
     bbox_w = min(0.6, max(0.02, (FX * obj_width_m / depth) / WIDTH))
@@ -138,9 +153,12 @@ for i, (t, x, y, z, qx, qy, qz, qw) in enumerate(sampled):
         if hit is None:
             continue
         px, py, depth = hit
+        seed = label_seed(label)
+        px += DETECTOR_NOISE_PX * math.sin(i * 1.3 + seed)
+        py += DETECTOR_NOISE_PX * math.cos(i * 1.7 + seed * 2)
         # Deterministic small confidence jitter so fused confidence isn't
         # perfectly uniform across observations, without a stray RNG dependency.
-        jitter = 0.1 * math.sin(i * 0.7 + hash(label) % 7)
+        jitter = 0.1 * math.sin(i * 0.7 + seed % 7)
         detections.append(make_detection(label, px, py, depth, 0.6, jitter))
 
     frames.append({
