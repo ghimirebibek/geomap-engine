@@ -1,0 +1,17 @@
+[package]
+name = "geomap-engine"
+version = "0.1.0"
+edition = "2021"
+description = "Fuses camera pose and object detections into a persistent, deduplicated 2D object map."
+license = "MIT"
+
+[lib]
+name = "geomap_engine"
+path = "src/lib.rs"
+
+[dependencies]
+prost = "0.13"
+prost-types = "0.13"
+
+[build-dependencies]
+prost-build = "0.13"

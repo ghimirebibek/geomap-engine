@@ -1,0 +1,58 @@
+# geomap-engine
+
+## Aim
+An open-source, platform-agnostic engine that fuses camera pose (from ARKit,
+ARCore, or any SLAM source) with object detections into a persistent,
+deduplicated 2D map of objects in a physical space.
+
+This is NOT a full AR app. It does not do SLAM, it does not run object
+detection, and it has no UI. It is the "glue" layer: given a stream of
+{pose, detections} per frame, it maintains a clean, queryable 2D object map.
+Any mobile app, robot, or tool can sit on top of it.
+
+## Problem it solves
+Existing tools (RoomPlan, Polycam, ARCore/ARKit) bundle SLAM + detection +
+UI into closed or heavyweight systems. There's no small, embeddable,
+open-source piece that just does pose+detection fusion well. This fills
+that gap.
+
+## Core responsibilities
+1. Projection — turn a 2D bounding box + camera pose + intrinsics into an
+   estimated 2D world position (ground-plane assumption for v0.1).
+2. Association — decide if a new detection matches an existing tracked
+   object (position proximity + class match).
+3. Fusion — merge repeated observations into one stable object: running
+   average position, growing confidence, discard one-off noise.
+4. Map maintenance — prune stale/low-confidence objects, handle moved
+   objects, expose current map state.
+
+## Explicit non-goals (v0.1)
+- No SLAM implementation (consumes pose, doesn't produce it)
+- No object detection model (consumes detections, doesn't produce them)
+- No mobile UI or app shell
+- No depth/LiDAR requirement — must work with monocular pose only
+
+## Tech choices
+- Language: Rust — for portability and future FFI into iOS/Android
+- Schema: Protobuf (see /proto/frame.proto) for input Frame and output
+  SceneMap, so any front-end (Swift/Kotlin/test harness) can feed it
+  language-agnostically
+- Public API surface: minimal — ingest_frame(Frame) -> &SceneMap
+
+## v0.1 scope
+- Fixed input: stream of {timestamp, camera_pose, detections[]}
+- Ground-plane-assumption projection (known/fixed camera height)
+- Naive nearest-neighbor association + running-average fusion
+- Output: SceneMap as JSON/GeoJSON-like structure, testable via
+  matplotlib or similar without any mobile app involved
+
+## Testing strategy
+No phone required for v0.1 development. Use recorded pose+detection logs
+(from public datasets like TUM RGB-D/ScanNet, or self-recorded via a
+minimal ARKit test harness later) as replayable input fixtures.
+
+## Longer-term (not v0.1)
+- Depth-aware projection when available
+- Visual re-identification for association (not just position/class)
+- Moving object handling
+- Multi-session map merging

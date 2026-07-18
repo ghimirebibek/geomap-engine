@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package geomap;
+
+// A single camera pose at a point in time, in world coordinates.
+// Supplied by the front-end's SLAM source (ARKit, ARCore, ORB-SLAM3, etc).
+message CameraPose {
+  double timestamp = 1;   // seconds, monotonic clock
+  float x = 2;            // meters, world frame
+  float y = 3;
+  float z = 4;
+  float qx = 5;           // orientation quaternion
+  float qy = 6;
+  float qz = 7;
+  float qw = 8;
+}
+
+// Pinhole camera intrinsics, used for projecting bounding boxes into
+// world space.
+message CameraIntrinsics {
+  float fx = 1;   // focal length x (pixels)
+  float fy = 2;   // focal length y (pixels)
+  float cx = 3;   // principal point x (pixels)
+  float cy = 4;   // principal point y (pixels)
+}
+
+// A single detected object in one frame, before any fusion or tracking.
+message Detection {
+  string label = 1;        // e.g. "chair", "door"
+  float confidence = 2;    // 0.0–1.0
+  float bbox_x = 3;        // normalized 0–1, top-left corner
+  float bbox_y = 4;        // normalized 0–1, top-left corner
+  float bbox_w = 5;        // normalized 0–1, width
+  float bbox_h = 6;        // normalized 0–1, height
+}
+
+// One packet of input to the engine: everything needed to process a
+// single camera frame.
+message Frame {
+  CameraPose pose = 1;
+  CameraIntrinsics intrinsics = 2;
+  repeated Detection detections = 3;
+}
+
+// A single tracked object in the fused 2D map. id is assigned and owned
+// by the engine, not the detector — this is what makes deduplication
+// work across many frames.
+message MapObject {
+  string id = 1;                 // stable UUID assigned by the engine
+  string label = 2;
+  float x = 3;                   // fused 2D position, world frame
+  float y = 4;
+  float confidence = 5;          // running fused confidence
+  int32 observation_count = 6;   // number of frames that confirmed this object
+  double first_seen = 7;         // timestamp of first observation
+  double last_seen = 8;          // timestamp of most recent observation
+}
+
+// The engine's current output: the full state of the 2D map at a point
+// in time.
+message SceneMap {
+  repeated MapObject objects = 1;
+  double updated_at = 2;
+}
