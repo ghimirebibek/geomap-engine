@@ -4,6 +4,9 @@ version = "0.1.0"
 edition = "2021"
 description = "Fuses camera pose and object detections into a persistent, deduplicated 2D object map."
 license = "MIT"
+repository = "https://github.com/ghimirebibek/geomap-engine"
+keywords = ["ar", "slam", "arkit", "geojson", "robotics"]
+categories = ["computer-vision", "science::robotics", "science::geo"]
 
 [lib]
 name = "geomap_engine"

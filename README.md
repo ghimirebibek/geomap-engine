@@ -4,6 +4,8 @@
 source) with object detections into a persistent, deduplicated 2D map of
 objects in a physical space.**
 
+[![Crates.io](https://img.shields.io/crates/v/geomap-engine.svg)](https://crates.io/crates/geomap-engine)
+[![docs.rs](https://img.shields.io/docsrs/geomap-engine)](https://docs.rs/geomap-engine)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Rust edition 2021](https://img.shields.io/badge/edition-2021-orange.svg)](Cargo.toml)
 
