@@ -1,0 +1,166 @@
+use uuid::Uuid;
+
+use crate::projection::project_to_ground;
+use crate::proto::{Detection, Frame, MapObject, SceneMap};
+
+/// Detections farther than this from an existing object (in meters) are
+/// treated as a new object rather than a repeat observation of it.
+const ASSOCIATION_RADIUS_METERS: f32 = 0.5;
+
+/// An object not reinforced by a new observation within this many seconds
+/// (frame-timestamp time, not wall-clock) is dropped. One rule covers all
+/// of map maintenance: a one-off false detection never gets reinforced
+/// and ages out; a genuinely stale object ages out; an object that moved
+/// ages out at its old position while a new one forms at the new position.
+const STALE_TIMEOUT_SECONDS: f64 = 2.0;
+
+pub struct Engine {
+    scene_map: SceneMap,
+}
+
+impl Engine {
+    pub fn new() -> Self {
+        Self { scene_map: SceneMap::default() }
+    }
+
+    pub fn ingest_frame(&mut self, frame: Frame) -> &SceneMap {
+        let (Some(pose), Some(intrinsics)) = (frame.pose.as_ref(), frame.intrinsics.as_ref())
+        else {
+            return &self.scene_map;
+        };
+
+        for detection in &frame.detections {
+            if let Some((x, y)) = project_to_ground(pose, intrinsics, detection) {
+                self.associate_and_fuse(detection, x, y, pose.timestamp);
+            }
+        }
+
+        self.prune_stale(pose.timestamp);
+        self.scene_map.updated_at = pose.timestamp;
+        &self.scene_map
+    }
+
+    fn associate_and_fuse(&mut self, detection: &Detection, x: f32, y: f32, timestamp: f64) {
+        let nearest = self
+            .scene_map
+            .objects
+            .iter_mut()
+            .filter(|obj| obj.label == detection.label)
+            .filter_map(|obj| {
+                let dist = ((obj.x - x).powi(2) + (obj.y - y).powi(2)).sqrt();
+                (dist <= ASSOCIATION_RADIUS_METERS).then_some((dist, obj))
+            })
+            .min_by(|a, b| a.0.total_cmp(&b.0))
+            .map(|(_, obj)| obj);
+
+        match nearest {
+            Some(obj) => fuse(obj, detection, x, y, timestamp),
+            None => self.scene_map.objects.push(new_object(detection, x, y, timestamp)),
+        }
+    }
+
+    fn prune_stale(&mut self, now: f64) {
+        self.scene_map
+            .objects
+            .retain(|obj| now - obj.last_seen <= STALE_TIMEOUT_SECONDS);
+    }
+}
+
+impl Default for Engine {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
+fn new_object(detection: &Detection, x: f32, y: f32, timestamp: f64) -> MapObject {
+    MapObject {
+        id: Uuid::new_v4().to_string(),
+        label: detection.label.clone(),
+        x,
+        y,
+        confidence: detection.confidence,
+        observation_count: 1,
+        first_seen: timestamp,
+        last_seen: timestamp,
+    }
+}
+
+fn fuse(obj: &mut MapObject, detection: &Detection, x: f32, y: f32, timestamp: f64) {
+    let n = obj.observation_count as f32;
+    obj.x = (obj.x * n + x) / (n + 1.0);
+    obj.y = (obj.y * n + y) / (n + 1.0);
+    // Combine as independent evidence so confidence grows toward 1 with
+    // repeated observations, instead of just averaging toward the mean.
+    obj.confidence = 1.0 - (1.0 - obj.confidence) * (1.0 - detection.confidence);
+    obj.observation_count += 1;
+    obj.last_seen = timestamp;
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::proto::{CameraIntrinsics, CameraPose};
+
+    fn frame_at(timestamp: f64, x: f32, y: f32, z: f32, detections: Vec<Detection>) -> Frame {
+        Frame {
+            pose: Some(CameraPose {
+                timestamp,
+                x,
+                y,
+                z,
+                qx: 1.0,
+                qy: 0.0,
+                qz: 0.0,
+                qw: 0.0,
+            }),
+            intrinsics: Some(CameraIntrinsics { fx: 500.0, fy: 500.0, cx: 320.0, cy: 240.0 }),
+            detections,
+        }
+    }
+
+    fn detection(label: &str, confidence: f32) -> Detection {
+        Detection {
+            label: label.to_string(),
+            confidence,
+            bbox_x: 0.5,
+            bbox_y: 0.5,
+            bbox_w: 0.0,
+            bbox_h: 0.0,
+        }
+    }
+
+    #[test]
+    fn repeated_observations_fuse_into_one_object_with_growing_confidence() {
+        let mut engine = Engine::new();
+        engine.ingest_frame(frame_at(0.0, 0.0, 0.0, 2.0, vec![detection("chair", 0.5)]));
+        let map = engine.ingest_frame(frame_at(0.5, 0.0, 0.0, 2.0, vec![detection("chair", 0.5)]));
+
+        assert_eq!(map.objects.len(), 1);
+        let obj = &map.objects[0];
+        assert_eq!(obj.observation_count, 2);
+        assert!(obj.confidence > 0.5, "confidence should grow past a single observation");
+    }
+
+    #[test]
+    fn different_labels_at_same_spot_stay_separate() {
+        let mut engine = Engine::new();
+        let map = engine.ingest_frame(frame_at(
+            0.0,
+            0.0,
+            0.0,
+            2.0,
+            vec![detection("chair", 0.5), detection("door", 0.5)],
+        ));
+
+        assert_eq!(map.objects.len(), 2);
+    }
+
+    #[test]
+    fn objects_not_reinforced_go_stale_and_get_pruned() {
+        let mut engine = Engine::new();
+        engine.ingest_frame(frame_at(0.0, 0.0, 0.0, 2.0, vec![detection("chair", 0.5)]));
+        let map = engine.ingest_frame(frame_at(10.0, 0.0, 0.0, 2.0, vec![]));
+
+        assert!(map.objects.is_empty());
+    }
+}
